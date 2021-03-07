@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::middleware('auth:api')->namespace('team')->group(function () {
+	Route::get('/team', [ClienteController::class, 'index']);
+	Route::get('/team/{id}', [ClienteController::class, 'show']);
+	Route::put('/team/{id}', [ClienteController::class, 'update']);
+	Route::delete('/team/{id}', [ClienteController::class, 'destroy']);
+});

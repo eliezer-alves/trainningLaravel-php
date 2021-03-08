@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\TeamController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::middleware('auth:api')->namespace('team')->group(function () {
-	Route::get('/team', [ClienteController::class, 'index']);
-	Route::get('/team/{id}', [ClienteController::class, 'show']);
-	Route::put('/team/{id}', [ClienteController::class, 'update']);
-	Route::delete('/team/{id}', [ClienteController::class, 'destroy']);
+// Route::middleware('auth:api')->namespace('team')->group(function () {
+Route::namespace('team')->group(function () {
+	Route::get('/team', [TeamController::class, 'index']);
+	Route::get('/team/{id}', [TeamController::class, 'show']);
+	Route::put('/team/{id}', [TeamController::class, 'update']);
+	Route::delete('/team/{id}', [TeamController::class, 'destroy']);
 });

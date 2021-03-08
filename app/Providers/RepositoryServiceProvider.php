@@ -8,7 +8,7 @@ use App\Repositories\Contracts\{
 };
 use App\Repositories\Eloquent\{
 	AbstractRepository,
-	TeamRepositoryI,
+	TeamRepository,
 };
 
 use Illuminate\Support\ServiceProvider;
@@ -29,7 +29,7 @@ class RepositoryServiceProvider extends ServiceProvider
 		
 		$this->app->bind(
 			TeamRepositoryInterface::class,
-			TeamRepositoryI::class
+			TeamRepository::class
 		);
 	}
 

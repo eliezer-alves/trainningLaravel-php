@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Eloquent
+namespace App\Repositories\Eloquent;
 
 use App\Models\Team;
 use App\Repositories\Contracts\TeamRepositoryInterface;

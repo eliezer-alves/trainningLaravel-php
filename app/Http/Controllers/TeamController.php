@@ -2,10 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\TeamService;
+
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
+
+    protected $teamService;
+
+    public function __construct(TeamService $teamService)
+    {
+        $this->teamService = $teamService;
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +25,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        return [];
+        return $this->teamService->all();
     }
 
     /**

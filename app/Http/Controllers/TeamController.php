@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Services\TeamService;
+use App\Http\Requests\StoreTeamRequest;
+use App\Http\Requests\UpdateTeamRequest;
 
 use Illuminate\Http\Request;
 
@@ -31,12 +33,12 @@ class TeamController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Request\StoreTeamRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTeamRequest $request)
     {
-        //
+        return $request->all();
     }
 
     /**
@@ -53,13 +55,13 @@ class TeamController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Request\UpdateTeamRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateTeamRequest $request, $id)
     {
-        //
+        return $request->all();
     }
 
     /**

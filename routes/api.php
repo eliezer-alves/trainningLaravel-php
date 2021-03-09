@@ -24,6 +24,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::middleware('auth:api')->namespace('team')->group(function () {
 Route::namespace('team')->group(function () {
 	Route::get('/team', [TeamController::class, 'index']);
+	Route::post('/team', [TeamController::class, 'store']);
 	Route::get('/team/{id}', [TeamController::class, 'show']);
 	Route::put('/team/{id}', [TeamController::class, 'update']);
 	Route::delete('/team/{id}', [TeamController::class, 'destroy']);
